@@ -1,0 +1,827 @@
+:root {
+  /* Atualizando para a sua nova cor */
+  --gold: #f3bc34;
+
+  /* Ajustando o gold escuro proporcionalmente para manter a elegância */
+  --gold-dark: #b88d27;
+  --gold-pale: #94895e;
+
+  --text-gray: #a1a1a1;
+  --bg-black: #000000;
+}
+
+/* Garante que o ID tenha o respiro correto para o Header fixo */
+#inicio,
+#laurelin,
+#curiosidades,
+#estilos,
+#contato,
+#historia {
+  scroll-margin-top: 100px; /* Ajuste este valor de acordo com a altura do seu header */
+}
+
+
+/* --- Atualizando os títulos para usar a nova variável --- */
+
+p {
+  font-family: 'Montserrat', sans-serif;
+  color: var(--gold-pale);
+  font-size: 1.2rem;
+  line-height: 1.8;
+  margin-bottom: 25px;
+  font-weight: 300;
+}
+
+html {
+  /* Isso garante a transição fluida para todas as âncoras */
+  scroll-behavior: smooth;
+}
+
+/* Opcional: Ajuste de compensação para o Header Fixo */
+section {
+  /* Como seu header é sticky (fixo no topo), 
+     isso evita que o título da seção fique "escondido" atrás dele */
+  scroll-margin-top: 100px; 
+}
+
+
+
+
+/* --- Estilo Unificado para Títulos de Seção --- */
+
+.product-showcase-title,
+.product-title,
+.style-title,
+.curiosities-title,
+.history-title {
+  font-family: 'Cinzel', serif;
+  font-size: 3.9rem;
+  color: var(--gold);
+  font-variant: all-small-caps;
+  margin-top: 15px;
+  letter-spacing: 0.05em;
+}
+
+/* --- Estilo Unificado para Sub-Títulos de Seção --- */
+
+.style-subtitle,
+.curiosities-subtitle,
+.history-subtitle {
+  color: var(--gold-pale);
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.45rem;
+  letter-spacing: 0.02em;
+  font-weight: 400;
+  max-width: 800px;
+  margin: 0 auto;
+  line-height: 1.6
+}
+
+/* Header */
+.header-container {
+  width: 100%;
+  background: rgba(0, 0, 0, 0.95);
+  /* Removida a borda inferior do container para usar as linhas internas do menu */
+  border-bottom: none;
+  padding: 25px 0;
+  text-align: center;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+
+.logo-area {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  grid-column: 2;
+}
+
+.logo-area h1 {
+  font-size: 32px;
+  margin: 0;
+  letter-spacing: 0.3em;
+  font-weight: 700;
+}
+
+/* --- Barra de Navegação com Botão Integrado --- */
+.nav-links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* Garante alinhamento vertical com o botão */
+  gap: 25px;
+  /* Espaçamento entre os links */
+  padding: 12px 0;
+  border-top: 1px solid rgba(212, 175, 55, 0.2);
+  border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+
+  font-size: 13px;
+  color: var(--text-gray);
+  text-transform: capitalize;
+  letter-spacing: 0.05em;
+}
+
+.nav-links a:hover {
+  color: var(--gold);
+}
+
+/* Estilo do Botão Comprar Amarelo */
+.nav-buy-btn {
+  background: var(--gold);
+  color: black;
+  padding: 6px 18px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 12px;
+  text-transform: capitalize;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: 0.3s;
+  margin-left: 10px;
+  /* Separação extra após o link Contato */
+}
+
+.nav-buy-btn:hover {
+  background: var(--gold-light);
+  box-shadow: 0 0 15px rgba(212, 175, 55, 0.4);
+  transform: scale(1.05);
+}
+
+.nav-links a:hover {
+  color: var(--gold);
+}
+
+/* Hero Section */
+.hero {
+  position: relative;
+  height: 85vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background: black;
+}
+
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  opacity: 0.25;
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom,
+      rgba(0, 0, 0, 0.2) 0%,
+      rgba(0, 0, 0, 0.9) 100%);
+  z-index: 2;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 10;
+  max-width: 900px;
+  padding: 0 20px;
+}
+
+.hero-title {
+  font-family: 'Cinzel', serif;
+  /* Garantindo a fonte correta */
+  font-size: clamp(5.5rem, 1vw, 4.5rem);
+  color: var(--gold);
+  line-height: 1.1;
+  margin: 1px 0;
+
+  /* Forçando o Small Caps de forma abrangente */
+  font-variant: all-small-caps;
+  -webkit-font-variant-caps: all-small-caps;
+  /* Suporte para Chrome/Safari */
+  
+  letter-spacing: 0.04em;
+  font-weight: 700;
+}
+
+
+/* Subtítulo Hero - Maior e mais espaçado */
+.hero-subtitle {
+  color: var(--gold-pale);
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.45rem;
+  letter-spacing: 0.02em;
+  font-weight: 400;
+  max-width: 800px;
+  margin: 0 auto;
+  line-height: 1.6
+}
+
+.hero-btn {
+  background: var(--gold);
+  color: black;
+  padding: 15px 35px;
+
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+
+
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  text-transform: capitalize;
+  letter-spacing: 0.05em;
+
+  margin-top: 30px;
+  transition: 0.3s;
+  border-radius: 4px;
+
+  /* Animação de entrada suave */
+  animation: fadeUp 0.8s ease-out forwards;
+}
+
+.hero-btn svg {
+  width: 20px;
+  height: 20px;
+  stroke-width: 2px;
+}
+
+.hero-btn:hover {
+  background: var(--gold-light);
+  box-shadow: 0 0 20px rgba(212, 175, 55, 0.4);
+  transform: translateY(-2px);
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero-btn:hover {
+  background: var(--gold-light);
+  box-shadow: 0 0 20px rgba(212, 175, 55, 0.4);
+}
+
+.hero-btn-link {
+  text-decoration: none;
+  display: inline-block;
+}
+
+
+
+/* Estilização da Coroa */
+.hero-crown {
+  width: 80px;
+  /* Equivalente ao w-20 */
+  height: 80px;
+  /* Equivalente ao h-20 */
+  color: var(--gold);
+  margin: 0 auto 24px auto;
+  /* Centraliza e dá margem inferior (mb-6) */
+  display: block;
+  animation: pulse-gold 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* Animação Pulsante */
+@keyframes pulse-gold {
+
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: .5;
+  }
+}
+
+/* --- Seção O Que é Hidromel --- */
+
+.about-section {
+  padding: 80px 0;
+  background-color: #000;
+  display: flex;
+  justify-content: center;
+}
+
+.about-container {
+  max-width: 1100px;
+  width: 90%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+/* Título aumentado e em tom Gold Escuro (#B38728) */
+.about-title {
+  font-family: 'Cinzel', serif;
+  font-size: 3.5rem;
+  color: var(--gold);
+  margin-bottom: 25px;
+  font-variant: all-small-caps;
+  letter-spacing: 0.05em;
+}
+
+.about-text {
+  font-family: 'Montserrat', sans-serif;
+
+}
+
+.highlight-gold {
+  color: #B38728;
+  /* Aplicando o mesmo dourado escuro no destaque */
+  font-weight: 600;
+}
+
+.about-image img {
+  width: 100%;
+  border-radius: 8px;
+  box-shadow: 0 0 40px rgba(0, 0, 0, 0.7);
+}
+
+
+.about-content {
+  color: var(--text-gray);
+}
+
+/* Ícone da Taça */
+.about-icon-top svg {
+  width: 48px;
+  height: 48px;
+  transition: transform 0.3s ease;
+}
+
+
+.about-icon-top svg:hover {
+  transform: scale(1.1);
+}
+
+
+.highlight-gold {
+  color: var(--gold);
+  font-weight: 600;
+}
+
+/* --- Grid de Cards Informativos --- */
+.info-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+  margin-top: 40px;
+}
+
+.info-card {
+  border: 1px solid rgba(250, 210, 81, 0.267);
+  padding: 20px 10px;
+  text-align: center;
+  border-radius: 4px;
+  transition: 0.3s;
+}
+
+.info-card:hover {
+  border-color: var(--gold);
+  background: rgba(212, 175, 55, 0.05);
+}
+
+.info-card svg {
+  color: var(--gold);
+  width: 24px;
+  height: 24px;
+  margin-bottom: 10px;
+}
+
+.info-card p {
+  font-size: 0.8rem;
+  color: var(--gold-pale);
+  text-transform: capitalize;
+  letter-spacing: 0.1em;
+}
+
+/* --- Seção Origem da Laurelin --- */
+.origin-section {
+  padding: 100px 0;
+  background-color: #050505;
+  /* Fundo levemente mais escuro para contraste */
+}
+
+.origin-container {
+  max-width: 1100px;
+  width: 90%;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+
+/* Título com a escala aumentada (3.2rem) e tom gold escuro */
+.origin-title {
+  font-family: 'Cinzel', serif;
+  font-size: 3.2rem;
+  color: var(--gold);
+  margin-bottom: 30px;
+  font-variant: all-small-caps;
+  letter-spacing: 0.05em;
+  line-height: 1.1;
+}
+
+/* Parágrafos com escala aumentada (1.2rem) */
+.origin-text {
+  font-family: 'Montserrat', sans-serif;
+  
+}
+
+.origin-highlight {
+  color: #B38728;
+  font-weight: 600;
+}
+
+.origin-image img {
+  width: 100%;
+  border-radius: 4px;
+  box-shadow: 0 10px 50px rgba(0, 0, 0, 0.9);
+  border: 1px solid rgba(179, 135, 40, 0.1);
+}
+
+/* --- Controle Geral de Ícones de Seção --- */
+.section-icon {
+  margin-bottom: 20px;
+  display: block;
+}
+
+.section-icon svg {
+  width: 50px;
+  /* Ajuste o tamanho do ícone aqui */
+  height: 50px;
+  color: #B38728;
+}
+
+/* --- Seção História Milenar --- */
+.history-section {
+  padding: 80px 0;
+  background-color: var(--bg-black);
+  text-align: center;
+}
+
+.history-header {
+  margin-bottom: 20px;
+}
+
+.history-title {
+  font-family: 'Cinzel', serif;
+  font-size: 4rem;
+  color: var(--gold);
+  font-variant: all-small-caps;
+  margin-top: 15px;
+}
+
+.history-subtitle {
+  color: var(--gold-pale);
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.45rem;
+  letter-spacing: 0.02em;
+  font-weight: 400;
+  max-width: 800px;
+  margin: 0 auto;
+  line-height: 1.6
+}
+
+/* --- Seção História Milenar (Timeline de 6 itens) --- */
+.history-section {
+  padding: 100px 0;
+  background-color: var(--bg-black);
+}
+
+.history-header {
+  text-align: center;
+  margin-bottom: 80px;
+}
+
+.history-title {
+  font-family: 'Cinzel', serif;
+  font-size: 3.9rem;
+  color: var(--gold);
+  font-variant: all-small-caps;
+  margin-top: 15px;
+  letter-spacing: 0.05em;
+}
+
+.timeline-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  /* Duas colunas para os 6 itens */
+  gap: 50px 80px;
+  /* Espaçamento vertical e horizontal */
+  max-width: 1100px;
+  margin: 0 auto 100px auto;
+  padding: 0 20px;
+}
+
+.timeline-item {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+}
+
+.timeline-number {
+  background: rgba(243, 188, 52, 0.1);
+  color: var(--gold);
+  border: 1px solid var(--gold);
+  min-width: 45px;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 1.1rem;
+  border-radius: 4px;
+}
+
+.timeline-content .timeline-epoch {
+  color: var(--gold-dark);
+  /* 9.000 a.C em gold-dark */
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-align: left;
+  text-transform: uppercase;
+  margin-bottom: 4px;
+  display: block;
+}
+
+.timeline-content h3 {
+  color: #ffffff;
+  font-family: 'Cinzel', serif;
+  font-size: 1.15rem;
+  text-align: left;
+  margin-bottom: 12px;
+  letter-spacing: 0.05em;
+}
+
+.timeline-content p {
+  color: var(--gold-pale);
+  /* Usando a sua nova variável de parágrafo */
+  font-size: 1rem;
+  text-align: left;
+  line-height: 1.6;
+  font-weight: 300;
+}
+
+.history-footer {
+  text-align: center;
+  margin-top: 60px;
+}
+
+.history-footer-img {
+  max-width: 900px;
+  width: 90%;
+  border-radius: 4px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.8);
+  border: 1px solid rgba(243, 188, 52, 0.1);
+}
+
+/* --- Seção Curiosidades Fascinantes --- */
+.curiosities-section {
+  padding: 100px 0;
+  background-color: var(--bg-black);
+  text-align: center;
+}
+
+/* O título já herda o padrão global que unificamos */
+.curiosities-title {
+  margin-top: 15px;
+}
+
+.curiosities-subtitle {
+  color: var(--gold-pale);
+  margin-bottom: 60px;
+  font-weight: 300;
+  letter-spacing: 0.05em;
+}
+
+.curiosities-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  /* 3 colunas conforme o gif */
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.curiosity-card {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(243, 188, 52, 0.1);
+  /* Borda sutil com gold */
+  padding: 40px 30px;
+  text-align: left;
+  border-radius: 8px;
+  transition: all 0.4s ease;
+}
+
+.curiosity-card:hover {
+  border-color: var(--gold);
+  transform: translateY(-10px);
+  background: rgba(243, 188, 52, 0.03);
+}
+
+.curiosity-icon {
+  color: var(--gold);
+  margin-bottom: 10px;
+}
+
+.curiosity-card h3 {
+  color: #ffffff;
+  font-family: 'Cinzel', serif;
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+  font-variant: all-small-caps;
+  letter-spacing: 0.05em;
+}
+
+.curiosity-card p {
+  color: var(--gold-pale);
+  font-size: 0.95rem;
+  line-height: 1.6;
+  font-weight: 300;
+}
+
+/* --- Seção Estilos de Hidromel --- */
+.styles-section {
+  padding: 100px 0;
+  background-color: var(--bg-black);
+  text-align: center;
+}
+
+.styles-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  max-width: 1200px;
+  margin: 60px auto 0;
+  padding: 0 20px;
+}
+
+.style-card {
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.03) 0%, rgba(0, 0, 0, 0) 100%);
+  border: 1px solid rgba(243, 188, 52, 0.1);
+  padding: 40px 30px;
+  text-align: left;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: 0.4s ease;
+}
+
+.style-card:hover {
+  border-color: var(--gold);
+  background: rgba(243, 188, 52, 0.05);
+}
+
+.style-card h3 {
+  font-family: 'Cinzel', serif;
+  color: var(--gold);
+  font-size: 1.4rem;
+  margin-bottom: 15px;
+  letter-spacing: 0.1em;
+  font-variant: all-small-caps;
+}
+
+.style-card p {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin-bottom: 25px;
+}
+
+/* Container das Tags/Pílulas */
+.style-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.tag {
+  border: 1px solid var(--gold-dark);
+  color: var(--gold-dark);
+  font-size: 11px;
+  padding: 4px 12px;
+  border-radius: 20px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 500;
+}
+
+/* --- Seção Detalhe do Produto --- */
+.product-showcase-section {
+  padding: 100px 0;
+  background-color: var(--bg-black);
+}
+
+.product-showcase-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.product-showcase-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.product-image-wrap img {
+  width: 100%;
+  border-radius: 8px;
+  box-shadow: 0 20px 80px rgba(0, 0, 0, 0.9);
+}
+
+/* Detalhes específicos do produto */
+.product-detail-item {
+  margin-bottom: 30px;
+  display: flex;
+  gap: 15px;
+}
+
+.product-detail-icon {
+  color: var(--gold);
+  min-width: 24px;
+}
+
+.product-detail-icon svg {
+  width: 28px;
+  height: 28px;
+  color: var(--gold);
+  flex-shrink: 0;
+}
+
+.product-detail-item {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+  margin-bottom: 30px;
+}
+
+.product-detail-info h4 {
+  color: #ffffff;
+  font-family: 'Cinzel', serif;
+  font-size: 1rem;
+  margin-bottom: 5px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.product-specs {
+  border-top: 1px solid rgba(243, 188, 52, 0.2);
+  padding-top: 20px;
+  margin-top: 20px;
+  display: flex;
+  gap: 20px;
+  font-size: 0.85rem;
+}
+
+.spec-label {
+  color: var(--gold);
+  font-weight: 700;
+}
+
+/* Botão de Ação da Seção */
+.product-cta-btn {
+  width: 100%;
+  margin-top: 30px;
+  background-color: var(--gold);
+  color: #000;
+  border: none;
+  padding: 15px;
+  font-weight: 700;
+  text-transform: uppercase;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.product-cta-btn:hover {
+  background-color: var(--gold-dark);
+  transform: translateY(-2px);
+}
