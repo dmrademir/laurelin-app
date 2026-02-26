@@ -6,6 +6,8 @@ import ingredientesImg from './assets/images/hvDkt1dzTGj2aQCzgoje5l-img-3_177076
 import productImg from './assets/images/hidromel-sack-product.jpeg';
 import vikingImg from './assets/images/hvDkt1dzTGj2aQCzgoje5l-img-2_1770765702000_na1fn_aGlzdG9yeS1hbmNpZW50LW1lYWQ.png';
 import productHero from './assets/images/hidromel-sack-product.jpeg';
+import pairingsImg from './assets/images/harmonizacao-tabua.png';
+import footerLogo from './assets/images/laurelin-logo-new.png';
 
 
 function App() {
@@ -17,8 +19,7 @@ function App() {
           <img  src={laurelinLogo} alt="Laurelin Logo" style={{ height: '55px' }} />
           <h1  >LAURELIN</h1>
         </div>
-        
-        <nav className="nav-links">
+          <nav className="nav-links">
           <a href="#laurelin">Laurelin</a>
           <a href="#historia">História</a>
           <a href="#curiosidades">Curiosidades</a>
@@ -81,13 +82,7 @@ function App() {
           </button></a>
         </div>
       </section>
-      <div style={{ height: '0vh', background: '#050505', position: 'relative', zIndex: '20' }}>
-        <h2 style={{ color: 'white', textAlign: 'center', paddingTop: '0px' }}>
-          
-        </h2>
-      </div>
-      
-
+     
       <section id="" className="about-section">
               <div className="about-container">
     
@@ -474,6 +469,323 @@ function App() {
           </div>
         </div>
       </section>
+
+      <section id="harmonizacoes" className="pairing-showcase-section">
+        <div className="pairing-showcase-container">
+          
+          <div className="pairing-showcase-header">
+            {/* ÍCONE PRINCIPAL MANTIDO NO TOPO DA SEÇÃO */}
+            <div className="section-icon" style={{ marginBottom: '20px' }}>
+              <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M6 13.87A4 4 0 0 1 7.41 6a5.11 5.11 0 0 1 1.05-1.54 5 5 0 0 1 7.08 0A5.11 5.11 0 0 1 16.59 6 4 4 0 0 1 18 13.87V21H6Z"/>
+                <line x1="6" y1="17" x2="18" y2="17"/>
+              </svg>
+            </div>
+            
+            <div className="pairing-title-container">
+              <h2 className="title">Harmonizações Gastronômicas</h2>
+            </div>
+            
+            <div className="pairing-subtitle-container">
+              <p className="subtitle">Descubra combinações perfeitas entre hidromel e pratos deliciosos</p>
+            </div>
+          </div>
+
+          <div className="pairing-grid">
+            <div className="pairing-image-wrap">
+              <img src={pairingsImg} alt="Harmonização Laurelin" />
+            </div>
+
+            <div className="pairing-info-wrap">
+              <div className="pairing-detail-item">
+                <div className="pairing-detail-info">
+                  <h4>Hidromel Tradicional</h4>
+                  <p>Queijos suaves (brie, gouda)</p>
+                  <p>Frango assado com ervas</p>
+                  <p>Risotos delicados</p>
+                  <p>Comida oriental (sushi, yakisoba)</p>
+                </div>
+              </div>
+
+              <div className="pairing-detail-item">
+                <div className="pairing-detail-info">
+                  <h4>Hidromel Amadeirado</h4>
+                  <p>Carnes grelhadas</p>
+                  <p>Queijos curados (parmesão)</p>
+                  <p>Massas com molhos encorpados</p>
+                </div>
+              </div>
+
+              <div className="pairing-detail-item">
+                <div className="pairing-detail-info">
+                  <h4>Hidromel com Frutas</h4>
+                  <p>Sobremesas de frutas</p>
+                  <p>Tábua de frios</p>
+                  <p>Chocolates meio amargos</p>
+                </div>
+              </div>
+
+              <div className="pairing-detail-item">
+                <div className="pairing-detail-info">
+                  <h4>Hidromel Seco</h4>
+                  <p>Carnes de caça</p>
+                  <p>Churrasco</p>
+                  <p>Pratos intensos e condimentados</p>
+                </div>
+              </div>
+
+              <div className="pairing-detail-item">
+                <div className="pairing-detail-info">
+                  <h4>Hidromel Sack</h4>
+                  <p>Pratos sofisticados</p>
+                  <p>Queijos envelhecidos</p>
+                  <p>Sobremesas nobres</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="drinks" className="drinks-showcase-section">
+        <div className="drinks-showcase-container">
+          
+          <div className="drinks-showcase-header">
+            <div className="section-icon" style={{ marginBottom: '20px' }}>
+              <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+              </svg>
+            </div>
+            
+            <div className="drinks-title-container">
+              <h2 className="title">Drinks Com Hidromel</h2>
+            </div>
+            
+            <div className="drinks-subtitle-container">
+              <p className="subtitle">Receitas exclusivas que elevam o hidromel a novas dimensões de sabor</p>
+            </div>
+          </div>
+
+          <div className="drinks-grid">
+            {/* Receita 1 */}
+            <div className="drink-recipe-card">
+              <h3 className="drink-title">Negroni</h3>
+              <span className="drink-section-label">Ingredientes:</span>
+              <ul className="drink-ingredients">
+                <li>Vermouth Rosso</li>
+                <li>Campari</li>
+                <li>Laurelin</li>
+                <li>Casca de Laranja</li>
+              </ul>
+              <span className="drink-section-label">Modo de Preparo:</span>
+              <p className="drink-method">
+                Em um copo com gelo, combine 30ml de Vermouth Rosso, 30ml de Campari e 30ml de Laurelin. Mexa bem e decore com casca de laranja. Serve-se em copo old fashioned com gelo.
+              </p>
+            </div>
+
+            {/* Receita 2 */}
+            <div className="drink-recipe-card">
+              <h3 className="drink-title">Ginger & Lime</h3>
+              <span className="drink-section-label">Ingredientes:</span>
+              <ul className="drink-ingredients">
+                <li>Suco de Limão Fresco</li>
+                <li>Xarope de Gengibre</li>
+                <li>Água com Gás</li>
+                <li>Laurelin</li>
+              </ul>
+              <span className="drink-section-label">Modo de Preparo:</span>
+              <p className="drink-method">
+                Em um copo com gelo, adicione 15ml de suco de limão fresco, 15ml de xarope de gengibre e 60ml de Laurelin. Complete com água com gás e mexa suavemente. Decore com rodela de limão e gengibre fresco.
+              </p>
+            </div>
+
+            {/* Receita 3 */}
+            <div className="drink-recipe-card">
+              <h3 className="drink-title">PCL Sour</h3>
+              <span className="drink-section-label">Ingredientes:</span>
+              <ul className="drink-ingredients">
+                <li>Suco de Abacaxi Fresco</li>
+                <li>Laurelin</li>
+                <li>Clara de Ovo</li>
+                <li>Canela em Pó</li>
+              </ul>
+              <span className="drink-section-label">Modo de Preparo:</span>
+              <p className="drink-method">
+                Em um coqueteleira, combine 45ml de suco de abacaxi fresco, 60ml de Laurelin e uma clara de ovo. Agite vigorosamente por 15 segundos. Coe em copo com gelo e polvilhe canela em pó na espuma.
+              </p>
+            </div>
+
+            {/* Receita 4 */}
+            <div className="drink-recipe-card">
+              <h3 className="drink-title">London Honey</h3>
+              <span className="drink-section-label">Ingredientes:</span>
+              <ul className="drink-ingredients">
+                <li>Gin Premium</li>
+                <li>Hidromel Laurelin</li>
+                <li>Limão Siciliano Fresco</li>
+              </ul>
+              <span className="drink-section-label">Modo de Preparo:</span>
+              <p className="drink-method">
+                Em um copo com gelo, combine 45ml de gin premium e 45ml de Laurelin. Aperte uma fatia de limão siciliano fresco sobre a bebida e adicione a casca como decoração. Mexa suavemente e aprecie a harmonia.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="contato" className="contact-showcase-section">
+        <div className="contact-showcase-container">
+          
+          <div className="contact-showcase-header">
+            <div className="section-icon" style={{ marginBottom: '20px' }}>
+              <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+            </div>
+            <div className="contact-title-container">
+              <h2 className="title">Entre em Contato</h2>
+            </div>
+            <div className="contact-subtitle-container">
+              <p className="subtitle">Tire suas dúvidas ou faça seu pedido</p>
+            </div>
+          </div>
+
+          <div className="contact-grid">
+            {/* Lado Esquerdo: Info */}
+            <div className="contact-info-column">
+              {/* Agrupamento superior para alinhar com o topo do form */}
+              <div className="contact-info-top">
+                <h3 className="pairing-title">Entre em Contato</h3> 
+                
+                {/* Email */}
+                <div className="contact-method">
+                  <div className="contact-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                      <rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
+                    </svg>
+                  </div>
+                  <div className="contact-text">
+                    <h4>Email</h4>
+                    <p className="pairing-subtitle">laurelinhidromel@laurelinhidromel.com.br</p>
+                    <p style={{fontSize: '0.8rem', opacity: 0.7}}>Respondemos em até 24 horas</p>
+                  </div>
+                </div>
+
+                {/* WhatsApp */}
+                <div className="contact-method">
+                  <div className="contact-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                      <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                    </svg>
+                  </div>
+                  <div className="contact-text">
+                    <h4>WhatsApp</h4>
+                    <p className="pairing-subtitle">(11) 97872-7672</p>
+                    <p style={{fontSize: '0.8rem', opacity: 0.7}}>Atendimento de segunda a sexta, 9h às 18h</p>
+                  </div>
+                </div>
+
+                {/* Localização */}
+                <div className="contact-method">
+                  <div className="contact-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                      <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/>
+                    </svg>
+                  </div>
+                  <div className="contact-text">
+                    <h4>Localização</h4>
+                    <p className="pairing-subtitle">São Paulo, SP</p>
+                    <p style={{fontSize: '0.8rem', opacity: 0.7}}>Agende sua visita à produção</p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Horário de funcionamento - Agora na base para harmonia */}
+              <div className="contact-business-hours-card">
+                <h4 className="contact-hours-title">Horário de Funcionamento</h4>
+                <div className="contact-hours-list">
+                  <p className="pairing-subtitle">Segunda a Sexta: 9h às 18h</p>
+                  <p className="pairing-subtitle">Sábado: 10h às 14h</p>
+                  <p className="pairing-subtitle">Domingo: Fechado</p>
+                </div>
+              </div>
+            </div>
+
+            {/* Lado Direito: Formulário */}
+            <form className="contact-form">
+              <div className="form-group">
+                <label>Nome Completo *</label>
+                <input type="text" className="contact-input" placeholder="Seu nome" required />
+              </div>
+              <div className="form-group">
+                <label>Email *</label>
+                <input type="email" className="contact-input" placeholder="seu@email.com" required />
+              </div>
+              <div className="form-group">
+                <label>Telefone/WhatsApp</label>
+                <input type="text" className="contact-input" placeholder="(11) 9 8765-4321" />
+              </div>
+              <div className="form-group">
+                <label>Assunto *</label>
+                <select className="contact-select" required>
+                  <option value="produtos">Dúvida sobre Produtos</option>
+                  <option value="pedidos">Fazer um Pedidos</option>
+                  <option value="revenda">Distribuição/Revenda</option>
+                  <option value="parceria">Evento/Parceria</option>
+                  <option value="outro">Outro</option>
+                </select>
+              </div>
+              <div className="form-group">
+                <label>Mensagem *</label>
+                <textarea className="contact-textarea" rows="5" placeholder="Conte-nos mais sobre sua dúvida ou pedido..." required></textarea>
+              </div>
+              <button type="submit" className="btn-send">
+                <span>➤</span> Enviar Mensagem
+              </button>
+            </form>
+          </div>
+        </div>
+      </section>
+
+
+      <footer className="footer-section">
+        <div className="footer-container">
+          <div className="footer-grid">
+            
+            {/* Coluna 1: Branding */}
+            <div className="footer-brand">
+              <div className="footer-logo-wrap">
+                <img src={footerLogo} alt="Laurelin Logo" width="30" />
+                <h3>LAURELIN</h3>
+              </div>
+              <p>Hidromel artesanal premium com mais de 9.000 anos de tradição</p>
+            </div>
+
+            {/* Coluna 2: Links Rápidos */}
+            <div className="footer-column">
+              <h4 className="footer-column-title">Links Rápidos</h4>
+              <ul className="footer-links">
+                <li><a href="#historia">História</a></li>
+                <li><a href="#produto">Produto</a></li>
+                <li><a href="#drinks">Drinks</a></li>
+                <li><a href="#contato">Contato</a></li>
+              </ul>
+            </div>
+
+            {/* Coluna 3: Redes Sociais */}
+            <div className="footer-social">
+              <h4 className="footer-column-title">Redes Sociais</h4>
+              <p>Siga-nos para novidades e promoções exclusivas</p>
+              <a href="https://www.instagram.com/laurelinhidromel" className="social-icon-link" target="_blank" rel="noreferrer">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+              </a>
+            </div>
+
+          </div>
+
+          <div className="footer-copyright">
+            <p>© 2026 Laurelin Hidromel Artesanal. Todos os direitos reservados.</p>
+          </div>
+        </div>
+      </footer>
 
     </div>
     
