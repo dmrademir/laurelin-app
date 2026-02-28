@@ -1,21 +1,29 @@
 import React from 'react';
+import { Link, useNavigate } from 'react-router-dom';
+import laurelinLogo from '../assets/images/laurelin-logo-new.png';
 
-const Navbar = () => {
+export default function Navbar() {
+  const navigate = useNavigate();
+
   return (
-    <nav className="bg-background text-gold-primary font-serif shadow-lg">
-      <div className="container mx-auto px-4">
-        <div className="flex justify-between items-center py-4">
-          <div className="text-2xl font-bold">Laurelin Hidromel</div>
-          <ul className="flex space-x-6">
-            <li><a href="/" className="hover:text-gold-light">Início</a></li>
-            <li><a href="/produtos" className="hover:text-gold-light">Produtos</a></li>
-            <li><a href="/sobre" className="hover:text-gold-light">Sobre</a></li>
-            <li><a href="/contato" className="hover:text-gold-light">Contato</a></li>
-          </ul>
-        </div>
+    <header className="header-container">
+      <div className="logo-area" style={{ cursor: 'pointer' }} onClick={() => navigate('/')}>
+        <img src={laurelinLogo} alt="Laurelin Logo" style={{ height: '55px' }} />
+        <h1>LAURELIN</h1>
       </div>
-    </nav>
+      <nav className="nav-links">
+        <Link to="/">Laurelin</Link>
+        <Link to="/historia">História</Link>
+        <Link to="/curiosidades">Curiosidades</Link>
+        <Link to="/estilos">Estilos</Link>
+        <Link to="/produto">Produto</Link>
+        <Link to="/harmonizacoes">Harmonizações</Link>
+        <Link to="/drinks">Drinks</Link>
+        <Link to="/contato">Contato</Link>
+        <a href="https://produto.mercadolivre.com.br/MLB-6257299332" target="_blank" rel="noopener noreferrer">
+          <button className="nav-buy-btn">Comprar</button>
+        </a>
+      </nav>
+    </header>
   );
-};
-
-export default Navbar;
+}

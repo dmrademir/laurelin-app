@@ -1,13 +1,19 @@
 import React from 'react';
+import footerLogo from '../assets/images/laurelin-logo-new.png';
 
-const Footer = () => {
+export default function Footer() {
   return (
-    <footer className="bg-background text-gold-primary font-serif py-4 mt-auto">
-      <div className="container mx-auto text-center">
-        <p>&copy; {new Date().getFullYear()} Laurelin Hidromel. Todos os direitos reservados.</p>
+    <footer className="footer-section">
+      <div className="footer-container">
+        {/* Conteúdo do seu footer original */}
+        <div className="footer-logo-wrap">
+          <img src={footerLogo} alt="Laurelin Logo" width="30" />
+          <h3>LAURELIN</h3>
+        </div>
+        <div className="footer-copyright">
+          <p>© 2026 Laurelin Hidromel Artesanal. Todos os direitos reservados.</p>
+        </div>
       </div>
     </footer>
   );
-};
-
-export default Footer;
+}
