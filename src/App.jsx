@@ -1,12 +1,13 @@
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
-import './assets/css/laurelin.css';
 
-// Componentes Fixos
+// Estilos e Utilitários
+import './assets/css/laurelin.css';
+import ScrollToTop from './components/ScrollToTop';
+
+// Componentes e Páginas
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
-
-// Páginas
 import Home from './pages/Home';
 import Historia from './pages/Historia';
 import Curiosidades from './pages/Curiosidades';
@@ -19,6 +20,7 @@ import Contato from './pages/Contato';
 function App() {
   return (
     <div className="app-wrapper">
+      <ScrollToTop /> {/* O ScrollToTop continua aqui */}
       <Navbar />
       <main>
         <Routes>

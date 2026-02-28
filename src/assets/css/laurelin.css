@@ -1281,7 +1281,9 @@ section {
   margin-bottom: 12px;
 }
 
-.footer-links a {
+.footer-links a,
+.footer-links Links,
+.footer-links HashLink {
   color: var(--gold-pale);
   text-decoration: none;
   font-size: 0.9rem;
