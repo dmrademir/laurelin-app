@@ -1,6 +1,48 @@
-import React from 'react';
+import React, { useState, useEffect, useRef } from 'react';
+import { useLocation } from 'react-router-dom';
+import emailjs from '@emailjs/browser';
 
 export default function Contato() {
+  const location = useLocation();
+  const formRef = useRef(); // Referência para capturar os dados do formulário
+  
+  // Estados para controle de UI e Formulário
+  const [assunto, setAssunto] = useState('produtos');
+  const [enviando, setEnviando] = useState(false);
+
+  // Hook para detectar se o usuário veio da página de Produto com um "state"
+  useEffect(() => {
+    if (location.state && location.state.assunto) {
+      setAssunto(location.state.assunto);
+    }
+  }, [location]);
+
+  // Função para processar o envio do e-mail
+  const handleSendEmail = (e) => {
+    e.preventDefault();
+    setEnviando(true);
+
+    // CONFIGURAÇÃO EMAILJS: Substitua pelos seus IDs do painel EmailJS
+    // No seu handleSendEmail, substitua as strings fixas por:
+    const SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID; 
+    const TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+    const PUBLIC_KEY = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
+
+    emailjs.sendForm(SERVICE_ID, TEMPLATE_ID, formRef.current, PUBLIC_KEY)
+      .then(() => {
+        alert("Mensagem enviada com sucesso! A Laurelin entrará em contato em breve.");
+        formRef.current.reset();
+        setAssunto('produtos'); // Reseta para o padrão
+      })
+      .catch((error) => {
+        alert("Erro ao enviar mensagem. Por favor, tente novamente.");
+        console.error("Erro EmailJS:", error);
+      })
+      .finally(() => {
+        setEnviando(false);
+      });
+  };
+
   return (
     <section id="contato" className="contact-showcase-section">
       <div className="contact-showcase-container">
@@ -20,11 +62,9 @@ export default function Contato() {
         <div className="contact-grid">
           {/* Lado Esquerdo: Info */}
           <div className="contact-info-column">
-            {/* Agrupamento superior para alinhar com o topo do form */}
             <div className="contact-info-top">
               <h3 className="pairing-title">Entre em Contato</h3> 
               
-              {/* Email */}
               <div className="contact-method">
                 <div className="contact-icon">
                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
@@ -38,7 +78,6 @@ export default function Contato() {
                 </div>
               </div>
 
-              {/* WhatsApp */}
               <div className="contact-method">
                 <div className="contact-icon">
                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
@@ -52,7 +91,6 @@ export default function Contato() {
                 </div>
               </div>
 
-              {/* Localização */}
               <div className="contact-method">
                 <div className="contact-icon">
                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
@@ -67,7 +105,6 @@ export default function Contato() {
               </div>
             </div>
 
-            {/* Horário de funcionamento - Agora na base para harmonia */}
             <div className="contact-business-hours-card">
               <h4 className="contact-hours-title">Horário de Funcionamento</h4>
               <div className="contact-hours-list">
@@ -79,35 +116,44 @@ export default function Contato() {
           </div>
 
           {/* Lado Direito: Formulário */}
-          <form className="contact-form">
+          <form className="contact-form" ref={formRef} onSubmit={handleSendEmail}>
             <div className="form-group">
               <label>Nome Completo *</label>
-              <input type="text" className="contact-input" placeholder="Seu nome" required />
+              <input type="text" name="user_name" className="contact-input" placeholder="Seu nome" required />
             </div>
             <div className="form-group">
               <label>Email *</label>
-              <input type="email" className="contact-input" placeholder="seu@email.com" required />
+              <input type="email" name="user_email" className="contact-input" placeholder="seu@email.com" required />
             </div>
             <div className="form-group">
               <label>Telefone/WhatsApp</label>
-              <input type="text" className="contact-input" placeholder="(11) 9 8765-4321" />
+              <input type="text" name="user_phone" className="contact-input" placeholder="(11) 9 8765-4321" />
             </div>
+            
             <div className="form-group">
               <label>Assunto *</label>
-              <select className="contact-select" required>
+              <select 
+                name="subject"
+                className="contact-select" 
+                required
+                value={assunto}
+                onChange={(e) => setAssunto(e.target.value)}
+              >
                 <option value="produtos">Dúvida sobre Produtos</option>
-                <option value="pedidos">Fazer um Pedidos</option>
+                <option value="pedidos">Fazer um Pedido</option>
                 <option value="revenda">Distribuição/Revenda</option>
                 <option value="parceria">Evento/Parceria</option>
                 <option value="outro">Outro</option>
               </select>
             </div>
+
             <div className="form-group">
               <label>Mensagem *</label>
-              <textarea className="contact-textarea" rows="5" placeholder="Conte-nos mais sobre sua dúvida ou pedido..." required></textarea>
+              <textarea name="message" className="contact-textarea" rows="5" placeholder="Conte-nos mais sobre sua dúvida ou pedido..." required></textarea>
             </div>
-            <button type="submit" className="btn-send">
-              <span>➤</span> Enviar Mensagem
+            
+            <button type="submit" className="btn-send" disabled={enviando}>
+              <span>➤</span> {enviando ? "Enviando..." : "Enviar Mensagem"}
             </button>
           </form>
         </div>

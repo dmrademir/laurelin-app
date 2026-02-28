@@ -10,6 +10,67 @@
   --bg-black: #000000;
 }
 
+/* --- Responsividade Global --- */
+
+@media (max-width: 768px) {
+  /* 1. Grid de Produto: Imagem em cima, texto embaixo */
+  .product-grid {
+    grid-template-columns: 1fr; /* Muda de 2 colunas para 1 */
+    gap: 40px;
+    text-align: center;
+  }
+
+  .product-image-wrap {
+    max-width: 300px;
+    margin: 0 auto;
+  }
+
+  .product-detail-item {
+    flex-direction: column; /* Ícone em cima do texto no mobile */
+    align-items: center;
+    text-align: center;
+  }
+
+  /* 2. Seção de Contato: Inverte a ordem se necessário ou empilha */
+  .contact-grid {
+    grid-template-columns: 1fr;
+    gap: 50px;
+  }
+
+  .contact-info-column {
+    order: 2; /* Move as infos para baixo do formulário ou vice-versa */
+    text-align: center;
+  }
+
+  .contact-method {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  /* 3. Ajuste de Tipografia */
+  .title, .product-showcase-title {
+    font-size: 2rem;
+  }
+
+  .app-wrapper main {
+    padding-top: 70px; /* Reduz o respiro do header no mobile */
+  }
+}
+
+/* Ajustes para telas muito pequenas (iPhone SE, etc) */
+@media (max-width: 480px) {
+  .product-cta-btn, .btn-send {
+    width: 100%; /* Botões ocupam a largura toda */
+  }
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
 /* --- Ajuste de Layout para Header Fixo --- */
 
 .app-wrapper main {
@@ -797,6 +858,10 @@ section {
   height: 28px;
   color: var(--gold);
   flex-shrink: 0;
+}
+
+.product-description {
+  margin-bottom: 15px;
 }
 
 .product-detail-item {
