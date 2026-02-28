@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import heroBg from '../assets/images/hvDkt1dzTGj2aQCzgoje5l-img-1_1770765704000_na1fn_aGVyby1oaWRyb21lbC1nb2xkZW4.png';
-import ingredientesImg from '../assets/images/hvDkt1dzTGj2aQCzgoje5l-img-3_1770765699000_na1fn_aW5ncmVkaWVudHMtaG9uZXktYmVlcw.png';
+import heroBg from '../assets/images/hidromel-hero.png';
+import ingredientesImg from '../assets/images/hidromel-ingredientes.png';
 
 export default function Home() {
   return (
