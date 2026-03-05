@@ -33,6 +33,9 @@ export default function Contato() {
     console.log("DEBUG KEY:", import.meta.env.VITE_EMAILJS_PUBLIC_KEY);
     const PUBLIC_KEY = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
 
+    const formData = new FormData(formRef.current);
+    console.log("Campos sendo enviados:", Object.fromEntries(formData));
+
     emailjs.sendForm(SERVICE_ID, TEMPLATE_ID, formRef.current, PUBLIC_KEY)
       .then(() => {
         alert("Mensagem enviada com sucesso! A Laurelin entrará em contato em breve.");
