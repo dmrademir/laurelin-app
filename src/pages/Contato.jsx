@@ -24,6 +24,7 @@ export default function Contato() {
 
     // CONFIGURAÇÃO EMAILJS: Substitua pelos seus IDs do painel EmailJS
     // No seu handleSendEmail, substitua as strings fixas por:
+    console.log("Apagar estas Verificações:")
     console.log("DEBUG SERVICE_ID:", import.meta.env.VITE_EMAILJS_SERVICE_ID);
     const SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID;
 
