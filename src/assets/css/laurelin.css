@@ -1,69 +1,29 @@
 :root {
-  /* Atualizando para a sua nova cor */
+  
   --gold: #f3bc34;
-
-  /* Ajustando o gold escuro proporcionalmente para manter a elegância */
   --gold-dark: #b88d27;
   --gold-pale: #94895e;
-
   --text-gray: #a1a1a1;
   --bg-black: #000000;
 }
 
-
-/* --- Responsividade Global --- */
-
-@media (max-width: 768px) {
-  /* 1. Grid de Produto: Imagem em cima, texto embaixo */
-  .product-grid {
-    grid-template-columns: 1fr; /* Muda de 2 colunas para 1 */
-    gap: 40px;
-    text-align: center;
-  }
-
-  .product-image-wrap {
-    max-width: 300px;
-    margin: 0 auto;
-  }
-
-  .product-detail-item {
-    flex-direction: column; /* Ícone em cima do texto no mobile */
-    align-items: center;
-    text-align: center;
-  }
-
-  /* 2. Seção de Contato: Inverte a ordem se necessário ou empilha */
-  .contact-grid {
-    grid-template-columns: 1fr;
-    gap: 50px;
-  }
-
-  .contact-info-column {
-    order: 2; /* Move as infos para baixo do formulário ou vice-versa */
-    text-align: center;
-  }
-
-  .contact-method {
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
-  }
-
-  /* 3. Ajuste de Tipografia */
-  .title, .product-showcase-title {
-    font-size: 2rem;
-  }
-
-  .app-wrapper main {
-    padding-top: 70px; /* Reduz o respiro do header no mobile */
-  }
+/* --- Reset e Base --- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-/* Ajustes para telas muito pequenas (iPhone SE, etc) */
-@media (max-width: 480px) {
-  .product-cta-btn, .btn-send {
-    width: 100%; /* Botões ocupam a largura toda */
-  }
+html {
+  scroll-behavior: smooth;
+  background-color: var(--bg-black);
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  color: var(--gold-pale);
+  background-color: var(--bg-black);
+  line-height: 1.8;
 }
 
 img {
@@ -72,13 +32,39 @@ img {
   display: block;
 }
 
-/* --- Ajuste de Layout para Header Fixo --- */
-
+/* --- Layout Principal (Compensação do Header Fixo) --- */
 .app-wrapper main {
-  /* Adiciona um recuo no topo de todas as páginas */
-  padding-top: 10px; 
-  min-height: calc(100vh - 80px); /* Garante que o footer não suba em páginas curtas */
+  /* No mobile o header é mais alto devido às pílulas */
+  padding-top: 170px; 
+  min-height: calc(100vh - 80px);
 }
+
+@media (min-width: 992px) {
+  .app-wrapper main {
+    /* No desktop o header é mais fino */
+    padding-top: 100px; 
+  }
+}
+
+/* --- Estilos de Botões Globais (Não-Navbar) --- */
+.hero-btn, .product-cta-btn, .btn-send {
+  background: var(--gold);
+  color: black;
+  padding: 15px 35px;
+  font-weight: 700;
+  text-transform: uppercase;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: 0.3s;
+  border: none;
+}
+
+.hero-btn:hover, .product-cta-btn:hover, .btn-send:hover {
+  background: var(--gold-dark);
+  box-shadow: 0 0 20px rgba(212, 175, 55, 0.4);
+  transform: translateY(-2px);
+}
+
 
 /* Garante que o ID tenha o respiro correto para o Header fixo */
 #inicio,
@@ -91,35 +77,25 @@ img {
 }
 
 
-/* --- Atualizando os títulos para usar a nova variável --- */
-
+/* --- Tipografia Unificada --- */
 p {
-  font-family: 'Montserrat', sans-serif;
-  color: var(--gold-pale);
   font-size: 1.2rem;
-  line-height: 1.8;
-  margin-bottom: 10Ppx;
   font-weight: 300;
+  margin-bottom: 10px;
 }
 
-html {
-  /* Isso garante a transição fluida para todas as âncoras */
-  scroll-behavior: smooth;
+.title, .product-showcase-title, .product-title, .style-title, 
+.curiosities-title, .history-title {
+  font-family: 'Cinzel', serif;
+  font-size: clamp(2.5rem, 5vw, 3.9rem);
+  color: var(--gold);
+  font-variant: all-small-caps;
+  letter-spacing: 0.05em;
+  margin-top: 15px;
 }
-
-/* Opcional: Ajuste de compensação para o Header Fixo */
-section {
-  /* Como seu header é sticky (fixo no topo), 
-     isso evita que o título da seção fique "escondido" atrás dele */
-  scroll-margin-top: 100px; 
-}
-
-
 
 
 /* --- Estilo Unificado para Títulos de Seção --- */
-
-
 
 .product-showcase-title,
 .product-title,
@@ -166,7 +142,6 @@ section {
 .header-container {
   width: 100%;
   background: rgba(0, 0, 0, 0.95);
-  /* Removida a borda inferior do container para usar as linhas internas do menu */
   border-bottom: none;
   padding: 25px 0;
   text-align: center;
@@ -196,9 +171,7 @@ section {
   display: flex;
   justify-content: center;
   align-items: center;
-  /* Garante alinhamento vertical com o botão */
   gap: 25px;
-  /* Espaçamento entre os links */
   padding: 12px 0;
   border-top: 1px solid rgba(212, 175, 55, 0.2);
   border-bottom: 1px solid rgba(212, 175, 55, 0.2);
@@ -226,7 +199,7 @@ section {
   cursor: pointer;
   transition: 0.3s;
   margin-left: 10px;
-  /* Separação extra após o link Contato */
+  
 }
 
 .nav-buy-btn:hover {
