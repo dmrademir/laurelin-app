@@ -1,98 +1,157 @@
-/* Container Principal com Animação de Scroll */
-.header-container {
-    position: fixed;
+/* Container Principal */
+.header-main-v5 {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 1);
+  z-index: 9999;
+  /*transition: transform 0.4s ease-in-out;*/
+  display: flex;
+  flex-direction: column; /* FORÇA DOIS NÍVEIS */
+  align-items: center;
+}
+/*
+.header-main-v5.hidden-scroll { transform: translateY(-100%); }
+.header-main-v5.visible { transform: translateY(0); } */
+
+/* NÍVEL 1: ÁREA DO LOGO */
+.logo-row-v5 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  padding: 20px 0 10px;
+  width: 100%;
+  cursor: pointer;
+}
+
+.logo-img-v5 { height: 50px; width: auto; }
+.logo-text-v5 { 
+  color: #f3bc34; 
+  letter-spacing: 5px; 
+  font-size: 1.5rem; 
+  margin: 0; 
+  font-family: 'Cinzel', serif;
+}
+
+/* NÍVEL 2: A BARRA QUE SE MOVE */
+/* NÍVEL 2: BARRA DE LINKS */
+.nav-row-v5 {
+  position: absolute; /* Não ocupa espaço fixo */
+  top: 80px; /* Logo abaixo do nível 1 fixo */
+  width: 100%;
+  z-index: 10;
+  /* Transição suave de posição, opacidade E cor de fundo */
+  transition: 
+    transform 0.5s cubic-bezier(0.4, 0, 0.2, 1), 
+    opacity 0.4s ease,
+    background-color 0.3s ease;
+}
+
+/* ESTADO VISÍVEL: Fundo opaco para leitura clara */
+.nav-row-v5.visible {
+  transform: translateY(0);
+  opacity: 1;
+  background-color: #000; /* Fundo preto volta a ser sólido aqui */
+  border-top: 1px solid rgba(243, 188, 52, 0.1);
+  border-bottom: 1px solid rgba(243, 188, 52, 0.1);
+}
+
+/* ESTADO ESCONDIDO: Totalmente transparente e deslocado */
+.nav-row-v5.hidden-scroll {
+  transform: translateY(-100%); 
+  opacity: 0;
+  background-color: transparent; /* Fundo some para não tapar o conteúdo */
+  pointer-events: none;
+  border-color: transparent;
+}
+
+/* --- CONFIGURAÇÃO DESKTOP (Telas grandes) --- */
+@media (min-width: 993px) {
+  .nav-row-v5 {
+    position: relative; /* No desktop ele volta a ocupar espaço para não sobrepor o conteúdo */
+    font-family: 'Montserrat', sans-serif;
     top: 0;
-    width: 100%;
-    background-color: #000;
-    z-index: 9999;
-    transition: transform 0.3s ease-in-out;
-    /* Transição suave */
     display: flex;
-    flex-direction: column;
-    /* Para logo em cima e menu embaixo no mobile */
-    align-items: center;
-    border-bottom: 1px solid rgba(243, 188, 52, 0.1);
-}
-
-.header-container.hidden-scroll {
-    transform: translateY(-100%);
-    /* Esconde para cima */
-}
-
-.header-container.visible {
-    transform: translateY(0);
-}
-
-/* Área do Logo centralizada */
-.logo-area {
-    display: flex;
-    align-items: center;
     justify-content: center;
-    gap: 15px;
-    padding: 15px 0;
-    width: 100%;
+    background-color: #000; /* Fundo sempre preto no desktop */
+    opacity: 1 !important; /* Garante que não fique transparente no PC */
+    transform: none !important; /* Remove o movimento de subir/descer no desktop se desejar */
+  }
+
+  .nav-links-container-v5 {
+    display: flex;
+    gap: 25px;
+    flex-direction: row; /* Força linha única */
+    flex-wrap: nowrap;   /* Impede quebra de linha */
+    align-items: center;
+    gap: 30px;           /* Espaçamento elegante entre links */
+    padding: 10px 0;
+  }
+
+  .nav-links-container-v5 a {
+    border: none;       /* Remove as bordas de pílula no desktop */
+    padding: 0;
+    font-size: 0.85rem;
+    text-decoration: none;
+    color: #fff;
+    transition: color 0.3s ease;
+  }
+    .nav-links-container-v5 a:hover {
+    color: var(--gold-pale); /* Utiliza a variável do seu laurelin.css */
+    
+  }
+    .buy-btn-v5 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    background-color: #f3bc34;
+    border-radius: 5px; 
+    padding: 5px 10px;
+    margin-top: 5px;      
+  } 
 }
 
-.logo-area h1 {
-    color: #f3bc34;
-    letter-spacing: 4px;
-    font-size: 1.2rem;
-}
 
-/* Links em formato de "pílulas" para Mobile (image_865521.png) */
-@media (max-width: 768px) {
-    .nav-links {
-        display: flex;
-        flex-wrap: wrap;
-        /* Quebra linha como no seu print */
-        justify-content: center;
-        gap: 8px;
-        padding: 10px 15px 20px;
-        background: #000;
-        width: 100%;
-    }
+/* Estilo de Pills no Mobile (Baseado na image_865521.png) */
+@media (max-width: 992px) {
+  .nav-links-container-v5 {
+    display: flex;
+    flex-wrap: wrap; /* Estilo Pills/Grid */
+    justify-content: center;
+    gap: 10px;
+    padding: 10px 15px;
+  }
 
-    .nav-links a {
-        color: #fff;
-        text-decoration: none;
-        font-size: 0.75rem;
-        padding: 5px 12px;
-        border: 1px solid rgba(243, 188, 52, 0.3);
-        /* Linha fina circundando */
-        border-radius: 20px;
-        /* Formato de pílula */
-        transition: all 0.3s ease;
-    }
+  .nav-links-container-v5 a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 0.75rem;
+    padding: 4px 10px;
+    border: 1px solid rgba(243, 188, 52, 0.4); /* Fina linha dourada */
+    border-radius: 20px; /* Formato Pill */
+    white-space: nowrap;
+  }
+  .nav-links-container-v5 a.no-pill {
+    border: none !important;      /* Remove a moldura dourada da imagem */
+    background: transparent !important;
+    padding: 0 !important;        /* Remove o espaçamento que cria o 'buraco' */
+    display: flex;
+    justify-content: center;
+    width: 100%;                  /* Centraliza o botão na linha dele */
+  }
+  .buy-btn-v5 {
+    background-color: #f3bc34 !important;
+    color: #000 !important;
+    border: none !important;
+    border-radius: 20px !important;
+    padding: 6px 25px !important;
+    font-family: 'Montserrat', sans-serif !important; /* Fonte padrão */
+    font-weight: 700 !important;
+    font-size: 0.75rem !important;
+    text-transform: none;
+    letter-spacing: 1px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Dá um leve relevo premium */
+  }
 
-    .nav-buy-btn {
-        background-color: #f3bc34;
-        color: #000;
-        border-radius: 4px;
-        border: none;
-        padding: 6px 15px;
-        font-weight: bold;
-        text-transform: uppercase;
-    }
-}
 
-/* Ajuste para Desktop (Links em linha única) */
-@media (min-width: 992px) {
-    .header-container {
-        flex-direction: row;
-        /* Volta ao normal no PC */
-        justify-content: space-between;
-        height: 80px;
-        padding: 0 5%;
-    }
-
-    .nav-links {
-        display: flex;
-        gap: 20px;
-    }
-
-    .nav-links a {
-        border: none;
-        /* Remove as pílulas no desktop para manter o visual limpo */
-        font-size: 0.9rem;
-    }
 }

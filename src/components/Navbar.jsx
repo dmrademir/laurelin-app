@@ -12,50 +12,46 @@ export default function Navbar() {
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
   const closeMenu = () => setIsMenuOpen(false);
 
-  // Lógica para esconder/mostrar ao rolar
   useEffect(() => {
     const controlNavbar = () => {
-      if (typeof window !== 'undefined') {
-        // Se rolar para baixo e passar de 100px, esconde. Se subir, mostra.
-        if (window.scrollY > lastScrollY && window.scrollY > 100) {
-          setShowNavbar(false);
-        } else {
-          setShowNavbar(true);
-        }
-        setLastScrollY(window.scrollY);
+      if (window.scrollY > lastScrollY && window.scrollY > 100) {
+        setShowNavbar(false);
+      } else {
+        setShowNavbar(true);
       }
+      setLastScrollY(window.scrollY);
     };
-
     window.addEventListener('scroll', controlNavbar);
     return () => window.removeEventListener('scroll', controlNavbar);
   }, [lastScrollY]);
 
   return (
-    <header className={`header-container ${showNavbar ? 'visible' : 'hidden-scroll'}`}>
-      <div className="logo-area" style={{ cursor: 'pointer' }} onClick={() => { navigate('/'); closeMenu(); }}>
-        <img src={laurelinLogo} alt="Laurelin Logo" style={{ height: '55px' }} />
-        <h1>LAURELIN</h1>
+    <header className={`header-main-v5 ${showNavbar ? 'visible' : 'hidden-scroll'}`}>
+      {/* NÍVEL 1: LOGO CENTRALIZADO */}
+      <div className="logo-row-v5" onClick={() => { navigate('/'); closeMenu(); }}>
+        <img src={laurelinLogo} alt="Laurelin Logo" className="logo-img-v5" />
+        <h1 className="logo-text-v5">LAURELIN</h1>
       </div>
 
-      <button className={`mobile-menu-icon ${isMenuOpen ? 'active' : ''}`} onClick={toggleMenu} aria-label="Menu">
-        <span className="bar"></span>
-        <span className="bar"></span>
-        <span className="bar"></span>
-      </button>
+      {/* NÍVEL 2: LINKS DA NAVBAR */}
+      <nav className={`nav-row-v5 ${showNavbar ? 'visible' : 'hidden-scroll'}`}>
+            <div className="nav-links-container-v5">
+              <Link to="/" onClick={closeMenu}>Laurelin</Link>
+              <Link to="/historia" onClick={closeMenu}>História</Link>
+              <Link to="/curiosidades" onClick={closeMenu}>Curiosidades</Link>
+              <Link to="/estilos" onClick={closeMenu}>Estilos</Link>
+              <Link to="/produto" onClick={closeMenu}>Produto</Link>
+              <Link to="/harmonizacoes" onClick={closeMenu}>Harmonizações</Link>
+              <Link to="/drinks" onClick={closeMenu}>Drinks</Link>
+              <Link to="/contato" onClick={closeMenu}>Contato</Link>
+              
+              {/* Adicione a classe 'no-pill' aqui no <a> */}
+              <a href="https://produto.mercadolivre.com.br/MLB-6257299332" target="_blank" rel="noopener noreferrer" className="no-pill">
+                <button className="buy-btn-v5">Comprar</button>
+              </a>
+            </div>
+          </nav>
 
-      <nav className={`nav-links ${isMenuOpen ? 'open' : ''}`}>
-        <Link to="/" onClick={closeMenu}>Laurelin</Link>
-        <Link to="/historia" onClick={closeMenu}>História</Link>
-        <Link to="/curiosidades" onClick={closeMenu}>Curiosidades</Link>
-        <Link to="/estilos" onClick={closeMenu}>Estilos</Link>
-        <Link to="/produto" onClick={closeMenu}>Produto</Link>
-        <Link to="/harmonizacoes" onClick={closeMenu}>Harmonizações</Link>
-        <Link to="/drinks" onClick={closeMenu}>Drinks</Link>
-        <Link to="/contato" onClick={closeMenu}>Contato</Link>
-        <a href="https://produto.mercadolivre.com.br/MLB-6257299332" target="_blank" rel="noopener noreferrer">
-          <button className="nav-buy-btn">Comprar</button>
-        </a>
-      </nav>
     </header>
   );
 }
