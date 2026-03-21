@@ -1,4 +1,4 @@
-import React from 'react';
+import React from 'react'; // import obrigatório do módulo React
 import { Routes, Route } from 'react-router-dom';
 
 // Estilos e Utilitários

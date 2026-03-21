@@ -29,7 +29,7 @@ export default function Harmonizacoes() {
             <img src={pairingsImg} alt="Harmonização Laurelin" />
           </div>
 
-          <div className="pairing-info-wrap">
+          <div className="pairing-info-wrap"> // info sobre as Harmonizações
             <div className="pairing-detail-item">
               <div className="pairing-detail-info">
                 <h4>Hidromel Tradicional</h4>
