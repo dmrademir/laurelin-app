@@ -14,7 +14,6 @@
 .header-main-v5.hidden-scroll { transform: translateY(-100%); }
 .header-main-v5.visible { transform: translateY(0); } */
 
-/* NÍVEL 1: ÁREA DO LOGO */
 .logo-row-v5 {
   display: flex;
   align-items: center;
@@ -23,6 +22,11 @@
   padding: 20px 0 10px;
   width: 100%;
   cursor: pointer;
+  position: relative;
+  z-index: 10001;
+  background-color: #000;
+  height: 80px;
+  width: 100px;
 }
 
 .logo-img-v5 { height: 50px; width: auto; }
@@ -52,9 +56,11 @@
 .nav-row-v5.visible {
   transform: translateY(0);
   opacity: 1;
-  background-color: #000; /* Fundo preto volta a ser sólido aqui */
+  pointer-events: auto !important;
+  background-color: #000 !important; /* Fundo preto volta a ser sólido aqui */
   border-top: 1px solid rgba(243, 188, 52, 0.1);
   border-bottom: 1px solid rgba(243, 188, 52, 0.1);
+  visibility: visible;
 }
 
 /* ESTADO ESCONDIDO: Totalmente transparente e deslocado */
@@ -62,31 +68,35 @@
   transform: translateY(-100%); 
   opacity: 0;
   background-color: transparent; /* Fundo some para não tapar o conteúdo */
-  pointer-events: none;
+  pointer-events: none important;
   border-color: transparent;
 }
 
 /* --- CONFIGURAÇÃO DESKTOP (Telas grandes) --- */
 @media (min-width: 993px) {
   .nav-row-v5 {
-    position: relative; /* No desktop ele volta a ocupar espaço para não sobrepor o conteúdo */
+    position: fixed; /* No desktop ele volta a ocupar espaço para não sobrepor o conteúdo */
     font-family: 'Montserrat', sans-serif;
-    top: 0;
+    top: 80px;
+    width: 100%;
     display: flex;
     justify-content: center;
-    background-color: #000; /* Fundo sempre preto no desktop */
+    background-color: #000 !important; /* Fundo sempre preto no desktop */
+    z-index: 10000;
+    transition: transform 0.4s, ease-in-out, opacity 0.3s ease;
     opacity: 1 !important; /* Garante que não fique transparente no PC */
     transform: none !important; /* Remove o movimento de subir/descer no desktop se desejar */
+    border-bottom: 1px solid rgba(243, 188, 52, 0.1);
   }
 
   .nav-links-container-v5 {
     display: flex;
-    gap: 25px;
+    gap: 30px;
     flex-direction: row; /* Força linha única */
     flex-wrap: nowrap;   /* Impede quebra de linha */
+    justify-content: center;
     align-items: center;
-    gap: 30px;           /* Espaçamento elegante entre links */
-    padding: 10px 0;
+    padding: 15px 0;
   }
 
   .nav-links-container-v5 a {
@@ -125,7 +135,7 @@
   .nav-links-container-v5 a {
     color: #fff;
     text-decoration: none;
-    font-size: 0.75rem;
+    font-size: 0.7rem;
     padding: 4px 10px;
     border: 1px solid rgba(243, 188, 52, 0.4); /* Fina linha dourada */
     border-radius: 20px; /* Formato Pill */

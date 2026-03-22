@@ -1,5 +1,5 @@
 :root {
-  
+
   --gold: #f3bc34;
   --gold-dark: #b88d27;
   --gold-pale: #94895e;
@@ -35,19 +35,21 @@ img {
 /* --- Layout Principal (Compensação do Header Fixo) --- */
 .app-wrapper main {
   /* No mobile o header é mais alto devido às pílulas */
-  padding-top: 170px; 
+  padding-top: 170px;
   min-height: calc(100vh - 80px);
 }
 
 @media (min-width: 992px) {
   .app-wrapper main {
     /* No desktop o header é mais fino */
-    padding-top: 100px; 
+    padding-top: 100px;
   }
 }
 
 /* --- Estilos de Botões Globais (Não-Navbar) --- */
-.hero-btn, .product-cta-btn, .btn-send {
+.hero-btn,
+.product-cta-btn,
+.btn-send {
   background: var(--gold);
   color: black;
   padding: 15px 35px;
@@ -59,7 +61,9 @@ img {
   border: none;
 }
 
-.hero-btn:hover, .product-cta-btn:hover, .btn-send:hover {
+.hero-btn:hover,
+.product-cta-btn:hover,
+.btn-send:hover {
   background: var(--gold-dark);
   box-shadow: 0 0 20px rgba(212, 175, 55, 0.4);
   transform: translateY(-2px);
@@ -73,7 +77,8 @@ img {
 #estilos,
 #contato,
 #historia {
-  scroll-margin-top: 50px; /* Ajuste este valor de acordo com a altura do seu header */
+  scroll-margin-top: 50px;
+  /* Ajuste este valor de acordo com a altura do seu header */
 }
 
 
@@ -84,8 +89,12 @@ p {
   margin-bottom: 10px;
 }
 
-.title, .product-showcase-title, .product-title, .style-title, 
-.curiosities-title, .history-title {
+.title,
+.product-showcase-title,
+.product-title,
+.style-title,
+.curiosities-title,
+.history-title {
   font-family: 'Cinzel', serif;
   font-size: clamp(2.5rem, 5vw, 3.9rem);
   color: var(--gold);
@@ -199,7 +208,7 @@ p {
   cursor: pointer;
   transition: 0.3s;
   margin-left: 10px;
-  
+
 }
 
 .nav-buy-btn:hover {
@@ -243,15 +252,18 @@ p {
 }
 
 .hero-content {
-  position: relative;
-  z-index: 10;
-  max-width: 900px;
-  padding: 0 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  z-index: 2;
+  /* Garante que o conteúdo não suba demais sob o Navbar fixo */
+  padding-top: 100px;
 }
 
 .hero-title {
   font-family: 'Cinzel', serif;
-  /* Garantindo a fonte correta */
   font-size: clamp(5.5rem, 1vw, 4.5rem);
   color: var(--gold);
   line-height: 1.1;
@@ -261,7 +273,7 @@ p {
   font-variant: all-small-caps;
   -webkit-font-variant-caps: all-small-caps;
   /* Suporte para Chrome/Safari */
-  
+
   letter-spacing: 0.04em;
   font-weight: 700;
 }
@@ -342,29 +354,21 @@ p {
 
 
 /* Estilização da Coroa */
-.hero-crown {
+.hero-crown-svg {
   width: 80px;
-  /* Equivalente ao w-20 */
+  /* Tamanho maior para impacto visual */
   height: 80px;
-  /* Equivalente ao h-20 */
-  color: var(--gold);
-  margin: 0 auto 24px auto;
-  /* Centraliza e dá margem inferior (mb-6) */
-  display: block;
-  animation: pulse-gold 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  margin-bottom: 20px;
+  /* Espaço entre a coroa e o título */
+  filter: drop-shadow(0 0 10px rgba(243, 188, 52, 0.3));
+  /* Brilho dourado leve */
+  animation: crown-pulse 3s infinite ease-in-out;
 }
 
-/* Animação Pulsante */
-@keyframes pulse-gold {
-
-  0%,
-  100% {
-    opacity: 1;
-  }
-
-  50% {
-    opacity: .5;
-  }
+/* Animação de Pulsação */
+@keyframes crown-pulse {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(0.95); opacity: 0.7; }
 }
 
 /* --- Seção O Que é Hidromel --- */
@@ -501,7 +505,7 @@ p {
 /* Parágrafos com escala aumentada (1.2rem) */
 .origin-text {
   font-family: 'Montserrat', sans-serif;
-  
+
 }
 
 .origin-highlight {
@@ -1105,14 +1109,16 @@ p {
   display: grid;
   grid-template-columns: 1fr 1.2fr;
   gap: 80px;
-  align-items: stretch; /* Alterado de flex-start para esticar as colunas */
+  align-items: stretch;
+  /* Alterado de flex-start para esticar as colunas */
 }
 
 /* Coluna de Informações - Ajuste de Flexbox para Harmonia */
 .contact-info-column {
   display: flex;
   flex-direction: column;
-  justify-content: space-between; /* Distribui os itens para alinhar com a altura do form */
+  justify-content: space-between;
+  /* Distribui os itens para alinhar com a altura do form */
 }
 
 .contact-info-column h3 {
@@ -1127,7 +1133,8 @@ p {
   display: flex;
   gap: 20px;
   align-items: flex-start;
-  margin-bottom: 5px; /* Reduzido para melhor encaixe vertical */
+  margin-bottom: 5px;
+  /* Reduzido para melhor encaixe vertical */
 }
 
 .contact-icon svg {
@@ -1185,8 +1192,8 @@ p {
   font-weight: 600;
 }
 
-.contact-input, 
-.contact-select, 
+.contact-input,
+.contact-select,
 .contact-textarea {
   background: rgba(255, 255, 255, 0.03);
   border: 1px solid rgba(243, 188, 52, 0.1);
@@ -1195,7 +1202,8 @@ p {
   border-radius: 4px;
   outline: none;
   font-family: 'Montserrat', sans-serif;
-  caret-color: var(--gold); /* Cor do cursor de digitação */
+  caret-color: var(--gold);
+  /* Cor do cursor de digitação */
 }
 
 .contact-select {
@@ -1208,8 +1216,8 @@ p {
 }
 
 /* Estados de Focus e Interação */
-.contact-input:focus, 
-.contact-select:focus, 
+.contact-input:focus,
+.contact-select:focus,
 .contact-textarea:focus {
   border-color: var(--gold);
   box-shadow: 0 0 8px rgba(243, 188, 52, 0.2);
@@ -1234,7 +1242,8 @@ p {
 }
 
 .btn-send:hover {
-  background-color: #e2ae2e; /* Tom levemente mais escuro do gold */
+  background-color: #e2ae2e;
+  /* Tom levemente mais escuro do gold */
   transform: translateY(-2px);
 }
 
@@ -1242,7 +1251,8 @@ p {
 .contact-business-hours-card {
   margin-top: 40px;
   padding: 30px;
-  background: rgba(243, 188, 52, 0.03); /* Fundo sutil dourado */
+  background: rgba(243, 188, 52, 0.03);
+  /* Fundo sutil dourado */
   border: 1px solid rgba(243, 188, 52, 0.1);
   border-radius: 4px;
 }

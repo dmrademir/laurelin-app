@@ -1,0 +1,108 @@
+.footer-laurelin-v5 {
+  background-color: #000;
+  padding: 60px 20px 20px;
+  border-top: 1px solid rgba(243, 188, 52, 0.1);
+  font-family: 'Montserrat', sans-serif;
+}
+
+/* --- DESKTOP (IMAGE_6BCAE6.PNG) --- */
+@media (min-width: 992px) {
+  .footer-grid-v5 {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr; /* Três colunas como no ideal */
+    gap: 80px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .footer-heading-v5 {
+    color: #fff;
+    font-size: 0.8rem;
+    letter-spacing: 3px;
+    margin-bottom: 25px;
+    font-weight: 600;
+    text-transform: uppercase;
+  }
+
+  .footer-nav-v5 {
+    display: flex;
+    flex-direction: column; /* Links em lista no desktop ideal */
+    gap: 8px;
+  }
+
+  .footer-nav-v5 a {
+    color: #666;
+    font-size: 0.75rem;
+    text-decoration: none;
+    transition: color 0.3s;
+  }
+
+  .footer-nav-v5 a:hover { color: #f3bc34; }
+}
+
+/* --- MOBILE (PILLS + CENTRALIZADO) --- */
+@media (max-width: 991px) {
+  .footer-grid-v5 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 35px;
+    text-align: center;
+  }
+
+  .footer-heading-v5 { display: none; } /* Oculta títulos para o visual pill */
+
+  .footer-nav-v5 {
+    display: flex;
+    flex-wrap: wrap; /* Estilo Pílulas */
+    justify-content: center;
+    gap: 10px;
+  }
+
+  .footer-nav-v5 a {
+    border: 1px solid rgba(243, 188, 52, 0.3);
+    border-radius: 20px;
+    padding: 6px 15px;
+    color: #fff;
+    font-size: 0.75rem;
+    text-decoration: none;
+  }
+}
+
+/* COMUM AOS DOIS */
+.footer-logo-wrap-v5 { display: flex; align-items: center; gap: 10px; margin-bottom: 15px; }
+.footer-img-v5 { height: 35px; }
+.footer-title-v5 { color: #f3bc34; letter-spacing: 3px; font-size: 1.1rem; }
+.footer-desc-v5 { color: #666; font-size: 0.8rem; line-height: 1.6; }
+
+.social-pill-v5 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 35px; /* Tamanho discreto */
+  height: 35px;
+  border: 1px solid rgba(243, 188, 52, 0.5); /* Borda fina dourada */
+  border-radius: 50%; /* Círculo perfeito */
+  color: #f3bc34;
+  background: transparent; /* Remove o amarelo sólido */
+  transition: all 0.3s ease;
+}
+
+.social-pill-v5:hover {
+  background-color: rgba(243, 188, 52, 0.1);
+  transform: translateY(-3px);
+}
+.footer-copyright-v5 {
+  margin-top: 50px;
+  padding-top: 30px;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  text-align: center; /* Centralizado */
+  width: 100%;
+}
+
+.footer-copyright-v5 p {
+  color: #444; /* Cor bem discreta */
+  font-size: 0.65rem; /* Fonte bem pequena */
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
