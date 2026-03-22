@@ -26,7 +26,7 @@ export default function Home() {
           </svg>
 
           <h1 className="hero-title">A Bebida dos Deuses</h1>
-          <p className="hero-subtitle">Descubra o hidromel com mais de 9.000 anos de história.</p>
+          <p className="hero-subtitle">Descubra o hidromel, a bebida alcoólica mais antiga do mundo, com mais de 9.000 anos de história milenar</p>
           <Link to="/historia" className="hero-btn-link">
             <button className="hero-btn">Descubra Nossa História</button>
           </Link>
