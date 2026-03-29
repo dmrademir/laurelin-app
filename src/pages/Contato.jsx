@@ -61,7 +61,7 @@ export default function Contato() {
             <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
           </div>
           <div className="contact-title-container">
-            <h2 className="title">Entre em Contato</h2>
+            <h2 className="contact-title">Entre em Contato</h2>
           </div>
           <div className="contact-subtitle-container">
             <p className="subtitle">Tire suas dúvidas ou faça seu pedido</p>
@@ -72,7 +72,7 @@ export default function Contato() {
           {/* Lado Esquerdo: Info */}
           <div className="contact-info-column">
             <div className="contact-info-top">
-              <h3 className="pairing-title">Entre em Contato</h3> 
+              <h3 className="drink-title">Entre em Contato</h3> 
               
               <div className="contact-method">
                 <div className="contact-icon">
@@ -82,8 +82,8 @@ export default function Contato() {
                 </div>
                 <div className="contact-text">
                   <h4>Email</h4>
-                  <p className="pairing-subtitle">laurelinhidromel@laurelinhidromel.com.br</p>
-                  <p style={{fontSize: '0.8rem', opacity: 0.7}}>Respondemos em até 24 horas</p>
+                  <p className="">laurelinhidromel@laurelinhidromel.com.br</p>
+                  <p className=''>Respondemos em até 24 horas</p>
                 </div>
               </div>
 

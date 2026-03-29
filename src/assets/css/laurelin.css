@@ -441,11 +441,14 @@ p {
 }
 
 .info-card {
-	border: 1px solid rgba(250, 210, 81, 0.267);
-	padding: 20px 10px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
 	text-align: center;
-	border-radius: 4px;
-	transition: 0.3s;
+	padding: 20px;
+	background: rgba(243, 188, 52, 0.05);
+	border: 1px solid rgba(243, 188, 52, 0.1);
+	transition: transform 0.3s ease;
 }
 
 .info-card:hover {
@@ -1481,9 +1484,21 @@ p {
 		padding: 0 !important;
 	}
 
+
+	.contact-title,
+	.pairing-title,
+	.drinks-title-container,
+	.product-showcase-title,
+	.product-title,
+	.style-title,
+	.curiosities-title,
+	.history-title,
+	.origin-title,
 	.about-title {
 		font-size: 2.2rem !important; /* Diminuindo o título para acompanhar a imagem menor */
 		margin-bottom: 15px !important;
+		padding: 0 8px 0 8px; 
+		line-height: 2.5rem;
 	}
 
 	/* 1. Reduz o tamanho da fonte e o espaçamento dos parágrafos da seção Sobre */
@@ -1590,36 +1605,24 @@ p {
 
 	/* 1. Garante que o Grid de cards não tente centralizar nada */
 	.info-cards-grid {
-		display: flex !important;
-		flex-direction: column !important;
-		align-items: flex-start !important; /* ALINHAMENTO À ESQUERDA */
+		grid-template-columns: 1fr !important;
 		gap: 12px !important;
-		width: 100% !important;
-		margin-top: 25px !important;
-		padding: 0 !important; /* O padding lateral já vem da section */
 	}
 
 	/* 2. Ajuste de cada Card individual */
 	.info-card {
-		display: flex !important;
 		flex-direction: row !important; /* Ícone ao lado do texto */
-		align-items: center !important; /* Alinha verticalmente ícone e texto */
-		justify-content: flex-start !important;
-		width: 100% !important;
-		padding: 12px 15px !important;
-		background: rgba(243, 188, 52, 0.04) !important;
-		border: 1px solid rgba(243, 188, 52, 0.1) !important;
+		align-items: center !important;
 		text-align: left !important;
+		padding: 12px 15px !important;
 	}
 
 	/* 3. Evita que ícones de tamanhos diferentes desalinhem o texto */
 	.info-card svg {
-		width: 20px !important;
-		height: 20px !important;
-		margin-bottom: 0 !important; /* Remove margem inferior de desktop */
-		margin-right: 15px !important; /* Espaço fixo entre ícone e texto */
-		flex-shrink: 0 !important; /* Impede que o ícone amasse */
-		color: var(--gold) !important;
+		margin-bottom: 0 !important;
+		margin-right: 15px !important;
+		width: 24px !important;
+		height: 24px !important;
 	}
 
 	/* 4. Ajuste do texto interno do card */
@@ -1661,10 +1664,135 @@ p {
 		grid-template-columns: 1fr !important;
 		gap: 20px;
 	}
+	/* 1. Ajuste do título da seção de contato */
+	.contact-title-container {
+		font-size: 1.8rem !important; /* Tamanho unificado com o que combinamos */
+		margin-bottom: 20px !important;
+		text-align: center;
+	}
+
+	/* 2. RESOLUÇÃO DO E-MAIL VAZANDO: Força a quebra de linha */
+	.contact-text p {
+		font-size: 0.85rem !important;
+		line-height: 1.4 !important;
+		word-break: break-all !important; /* Isso quebra o e-mail longo para não sair da tela */
+		overflow-wrap: break-word !important;
+		max-width: 100%;
+		color: var(--gold-pale);
+	}
+
+	/* 3. Ajuste do espaçamento entre os métodos de contato */
+	.contact-method {
+		gap: 15px !important;
+		margin-bottom: 25px !important;
+		align-items: flex-start;
+	}
+
+	/* 4. Ícones menores para ganhar espaço lateral */
+	.contact-icon svg {
+		width: 22px !important;
+		height: 22px !important;
+		flex-shrink: 0;
+	}
+
+	/* 1. Reduz o tamanho e o peso visual do card */
+	.contact-business-hours-card {
+		margin-top: 25px !important;
+		padding: 20px !important; /* Menos preenchimento interno */
+		width: 100% !important;
+		background: rgba(243, 188, 52, 0.05) !important;
+		border: 1px solid rgba(243, 188, 52, 0.1) !important;
+	}
+
+	/* 2. Ajusta o título do horário */
+	.contact-hours-title {
+		font-size: 0.8rem !important;
+		margin-bottom: 15px !important;
+		letter-spacing: 1px !important;
+		text-align: left;
+	}
+
+	/* 3. Ajusta a lista de horários para não quebrar linha errado */
+	.contact-hours-list p {
+		font-size: 0.85rem !important; /* Fonte menor e mais elegante */
+		line-height: 1.4 !important;
+		margin-bottom: 6px !important;
+		display: flex;
+		justify-content:间; /* Se quiser alinhar dia na esquerda e hora na direita */
+		border-bottom: 1px solid rgba(243, 188, 52, 0.05);
+		padding-bottom: 4px;
+	}
+
+	.contact-hours-list p:last-child {
+		border-bottom: none;
+	}
+
+	/* 1. Força os drinks a ficarem um abaixo do outro */
+	.drinks-grid {
+		grid-template-columns: 1fr !important;
+		gap: 25px !important;
+		width: 100% !important;
+	}
+
+	/* 2. Ajusta o card de receita para ocupar a largura total com respiro */
+	.drink-recipe-card {
+		padding: 25px !important;
+		width: 100% !important;
+		text-align: left !important;
+	}
+
+	/* 3. Ajusta o título do drink (Negroni, Ginger & Limão) */
+	.drink-title {
+		font-size: 1.2rem !important;
+		margin-bottom: 15px !important;
+		letter-spacing: 2px !important;
+	}
+
+	/* 4. Corrige a lista de ingredientes para não quebrar feio */
+	.drink-ingredients li {
+		font-size: 0.85rem !important;
+		line-height: 1.4 !important;
+		margin-bottom: 8px !important;
+		display: flex;
+		align-items: flex-start; /* Alinha o ponto dourado no topo da linha */
+	}
+
+
+	/* 1. Container unificado para links e botão */
+    .nav-links {
+        display: flex !important;
+        flex-wrap: wrap !important; /* Permite que os itens se organizem em linhas */
+        justify-content: center !important; /* Centraliza o grupo todo */
+        align-items: center !important;
+        gap: 10px !important; /* Espaçamento uniforme entre todos */
+        padding: 15px 10px !important;
+        width: 100% !important;
+        border: none !important; /* Remove bordas internas se houver */
+    }
+
+    /* 2. Padronização das Pílulas (Links) */
+    .nav-links a {
+        font-size: 0.75rem !important;
+        padding: 8px 16px !important;
+        border: 1px solid rgba(243, 188, 52, 0.4);
+        border-radius: 20px;
+        white-space: nowrap;
+        margin: 0 !important; /* Remove margens que causam desalinhamento */
+    }
+
+    /* 3. Ajuste do Botão Comprar para alinhar com as pílulas */
+    .nav-buy-btn {
+        margin: 0 !important; /* Tira o margin-left que o empurra para o lado */
+        padding: 8px 20px !important; /* Mesma altura das pílulas */
+        font-size: 0.75rem !important;
+        display: inline-flex !important;
+        align-items: center;
+        height: auto !important;
+        border-radius: 20px !important; /* Mesma curvatura para harmonia total */
+    }
+
+    /* 4. Remove qualquer container que esteja isolando o botão */
+    .no-pill {
+        display: contents !important; /* Faz a div "desaparecer" e o botão virar filho direto do flex */
+    }
 }
-
-
-
-
-
-

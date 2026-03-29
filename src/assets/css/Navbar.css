@@ -5,14 +5,10 @@
 		width: 100%;
 		background-color: rgba(0, 0, 0, 1);
 		z-index: 9999;
-		/*transition: transform 0.4s ease-in-out;*/
 		display: flex;
 		flex-direction: column; /* FORÇA DOIS NÍVEIS */
 		align-items: center;
 }
-/*
-.header-main-v5.hidden-scroll { transform: translateY(-100%); }
-.header-main-v5.visible { transform: translateY(0); } */
 
 .logo-row-v5 {
 		display: flex;
@@ -164,4 +160,4 @@
 		}
 
 
-}
+

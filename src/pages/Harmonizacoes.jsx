@@ -16,11 +16,11 @@ export default function Harmonizacoes() {
           </div>
           
           <div className="pairing-title-container">
-            <h2 className="title">Harmonizações Gastronômicas</h2>
+            <h2 className="pairing-title">Harmonizações Gastronômicas</h2>
           </div>
           
           <div className="pairing-subtitle-container">
-            <p className="subtitle">Descubra combinações perfeitas entre hidromel e pratos deliciosos</p>
+            <p className="pairing-subtitle">Descubra combinações perfeitas entre hidromel e pratos deliciosos</p>
           </div>
         </div>
 
