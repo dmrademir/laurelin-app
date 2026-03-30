@@ -639,18 +639,23 @@ p {
 }
 
 .history-footer {
-	text-align: center;
-	margin-top: 60px;
+	display: flex !important;
+	justify-content: center !important;
+	width: 100% !important;
+	margin: 60px auto 0 auto !important;
+	padding: 0 20px !important;
 }
 
 .history-footer-img {
 	max-width: 900px;
-	width: 90%;
+	width:100%;
+	height: auto  !important;
+	display: block !important;
+	margin: 0 auto !important;
 	border-radius: 4px;
 	box-shadow: 0 20px 60px rgba(0, 0, 0, 0.8);
 	border: 1px solid rgba(243, 188, 52, 0.1);
-	align-items: center;
-	justify-content: center;
+
 }
 
 /* --- Seção Curiosidades Fascinantes --- */

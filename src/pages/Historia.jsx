@@ -1,6 +1,6 @@
 import React from 'react';
 import productImg from '../assets/images/hidromel-sack-product.jpeg';
-import vikingImg from '../assets/images/hvDkt1dzTGj2aQCzgoje5l-img-2_1770765702000_na1fn_aGlzdG9yeS1hbmNpZW50LW1lYWQ.png';
+import alchemiaImg from '../assets/images/hidromel_alchemia.jpg';
 
 export default function Historia() {
 	return (
@@ -113,7 +113,7 @@ export default function Historia() {
 		</div>
 
 		<div className="history-footer">
-		<img src={vikingImg} alt="Cultura e História do Hidromel" className="history-footer-img" />
+		<img src={alchemiaImg} alt="Cultura e História do Hidromel" className="history-footer-img" />
 		</div>
 
 
