@@ -8,7 +8,7 @@ export default function Estilos() {
             <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M17.5 19c.7 0 1.2-.6 1.2-1.3V8.8c0-.4-.2-.8-.6-1L12 4 5.9 7.8c-.4.2-.6.6-.6 1v8.9c0 .7.5 1.3 1.2 1.3h11z"/><path d="M12 21v-8"/></svg>
           </div>
           <h2 className="style-title">Estilos De Hidromel</h2>
-          <p className='style-subtitle'>Conheça as diferentes categorias e características de cada estilo</p>
+          <p className='subtitle'>Conheça as diferentes categorias e características de cada estilo</p>
         </div>
 
         <div className="styles-grid">

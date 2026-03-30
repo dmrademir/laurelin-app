@@ -20,7 +20,7 @@ export default function Harmonizacoes() {
           </div>
           
           <div className="pairing-subtitle-container">
-            <p className="pairing-subtitle">Descubra combinações perfeitas entre hidromel e pratos deliciosos</p>
+            <p className="subtitle">Descubra combinações perfeitas entre hidromel e pratos deliciosos</p>
           </div>
         </div>
 
