@@ -2,7 +2,7 @@
   background-color: #000;
   padding: 60px 20px 20px;
   border-top: 1px solid rgba(243, 188, 52, 0.1);
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
 }
 
 /* --- DESKTOP (IMAGE_6BCAE6.PNG) --- */
@@ -37,7 +37,9 @@
     transition: color 0.3s;
   }
 
-  .footer-nav-v5 a:hover { color: #f3bc34; }
+  .footer-nav-v5 a:hover {
+    color: #f3bc34;
+  }
 }
 
 /* --- MOBILE (PILLS + CENTRALIZADO) --- */
@@ -50,7 +52,9 @@
     text-align: center;
   }
 
-  .footer-heading-v5 { display: none; } /* Oculta títulos para o visual pill */
+  .footer-heading-v5 {
+    display: none;
+  } /* Oculta títulos para o visual pill */
 
   .footer-nav-v5 {
     display: flex;
@@ -70,10 +74,25 @@
 }
 
 /* COMUM AOS DOIS */
-.footer-logo-wrap-v5 { display: flex; align-items: center; gap: 10px; margin-bottom: 15px; }
-.footer-img-v5 { height: 35px; }
-.footer-title-v5 { color: #f3bc34; letter-spacing: 3px; font-size: 1.1rem; }
-.footer-desc-v5 { color: #666; font-size: 0.8rem; line-height: 1.6; }
+.footer-logo-wrap-v5 {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+.footer-img-v5 {
+  height: 35px;
+}
+.footer-title-v5 {
+  color: #f3bc34;
+  letter-spacing: 3px;
+  font-size: 1.1rem;
+}
+.footer-desc-v5 {
+  color: #666;
+  font-size: 0.8rem;
+  line-height: 1.6;
+}
 
 .social-pill-v5 {
   display: flex;
