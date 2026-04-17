@@ -23,18 +23,8 @@ export default function Contato() {
     setEnviando(true);
 
     // CONFIGURAÇÃO EMAILJS: Substitua pelos seus IDs do painel EmailJS
-    // No seu handleSendEmail, substitua as strings fixas por:
-    console.log("Apagar estas Verificações:");
-    console.log("DEBUG SERVICE_ID:", import.meta.env.VITE_EMAILJS_SERVICE_ID);
     const SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID;
-
-    console.log(
-      "DEBUG EMAIL_TEMPLATE_ID:",
-      import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
-    );
     const TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
-
-    console.log("DEBUG KEY:", import.meta.env.VITE_EMAILJS_PUBLIC_KEY);
     const PUBLIC_KEY = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
 
     const formData = new FormData(formRef.current);
