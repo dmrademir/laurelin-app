@@ -36,7 +36,7 @@ export default function Drinks() {
         <div className="drinks-grid">
           {/* Receita 1 */}
           <div className="drink-recipe-card">
-            <h3 className="drink-title">Negroni</h3>
+            <h3 className="drink-title">Laurelin Negroni</h3>
             <span className="drink-section-label">Ingredientes:</span>
             <ul className="drink-ingredients">
               <li>Vermouth Rosso</li>
@@ -73,7 +73,7 @@ export default function Drinks() {
 
           {/* Receita 3 */}
           <div className="drink-recipe-card">
-            <h3 className="drink-title">PCL Sour</h3>
+            <h3 className="drink-title">Laurelin PCL Sour</h3>
             <span className="drink-section-label">Ingredientes:</span>
             <ul className="drink-ingredients">
               <li>Suco de Abacaxi Fresco</li>
