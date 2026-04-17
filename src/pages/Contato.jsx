@@ -28,7 +28,6 @@ export default function Contato() {
     const PUBLIC_KEY = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
 
     const formData = new FormData(formRef.current);
-    console.log("Campos sendo enviados:", Object.fromEntries(formData));
 
     emailjs
       .sendForm(SERVICE_ID, TEMPLATE_ID, formRef.current, PUBLIC_KEY)
